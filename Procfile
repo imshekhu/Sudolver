@@ -1,1 +1,1 @@
-web: gunicorn Sudolovers.wsgi
+web: gunicorn Sudolvers.wsgi
