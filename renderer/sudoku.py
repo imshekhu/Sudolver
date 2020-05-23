@@ -85,10 +85,7 @@ def empty_find(bo):
 
 
 def start(board):
-    print(board)
-    # print_board(board)
     algos(board)
-    # print('_______________!!!!!!!!!!!________________')
-    print(board)
-    # r
-    return None
+    solved = {}
+    solved["board"]=board
+    return solved

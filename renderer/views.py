@@ -17,8 +17,8 @@ class MyView(View):
     
     
     def post(self, request):
-        print(type(request.body))
+        # print(type(request.body))
         data = json.loads (request.body)
-        start(data)
-        return  HttpResponse({"response":"jeirjrs"}, content_type="application/json")
+        solved_board = start(data)
+        return  HttpResponse(json.dumps(solved_board), content_type="application/json")
         

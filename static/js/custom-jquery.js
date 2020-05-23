@@ -24,7 +24,15 @@ function hompage_sudo_solve(){
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(resp) {
-            console.log("_________",resp);
+            // console.log("_________",resp["board"]);
+            solved_array = grouping_algo(resp["board"]);
+            grid.each(function(i) {
+                element = $(this);
+                element.val(solved_array[i]);
+                element.attr('disabled','disabled');
+            });
+            $("#solve-btn").attr('disabled','disabled');
+            $("#solve-btn").text('SOLVED');
         },
         error: function (jqXHR, status) {
             // error handler
@@ -43,4 +51,13 @@ function splittingalgo(arr){
       }
     console.log(final_feed);
     return final_feed;
+}
+
+function grouping_algo(arr){
+    // final_solved = []
+    counter = 0;
+    new_arr = arr.join();
+    var final_solved = new_arr.split(',')    ;
+    console.log(final_solved);
+    return final_solved;
 }
