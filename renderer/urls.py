@@ -6,5 +6,6 @@ from .views import *
 app_name='renderer'
 
 urlpatterns = [
-     path('', MyView.as_view())
+     path('', HomeView.as_view(),  name='homepage'),
+     path('new-entry/', OwnBoardView.as_view(), name='new-entry'),
 ]
